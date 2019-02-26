@@ -48,6 +48,8 @@ components:
           format: date-time
         addresses:
           $ref: '#/components/schemas/Address'
+        date_unavailable_for_interviews:
+          $ref: '#/components/schemas/DateUnavailableForInterview'
 
     Address:
       type: object
@@ -67,6 +69,28 @@ components:
           type: string
         country:
           type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    DateUnavailableForInterview:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        date:
+          type: string
+          format: date
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
 
 paths:
   '/applications':
