@@ -26,8 +26,26 @@ components:
           type: string
         nationality:
           type: string
+        disability:
+          type: string
         personal_statement:
           type: string
+        agreed_to_dbs_check:
+          type: boolean
+        training_provider_code:
+          type: string
+        training_programme:
+          type: string
+        training_location:
+          type: string
+        full_time:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
         addresses:
           $ref: '#/components/schemas/Address'
 
