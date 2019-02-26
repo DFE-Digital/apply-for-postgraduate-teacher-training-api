@@ -30,8 +30,6 @@ components:
           type: string
         personal_statement:
           type: string
-        agreed_to_dbs_check:
-          type: boolean
         training_provider_code:
           type: string
         training_programme:
@@ -215,7 +213,7 @@ paths:
           '404':
             description: Application not found
 
-  '/applications/{application_id}/unconditional':
+  '/applications/{application_id}/accept_unconditional':
     patch:
       summary: Make an unconditional offer to this application
       description: |
@@ -246,7 +244,7 @@ paths:
         '409':
           description: Application has already been rejected.
 
-  '/applications/{application_id}/conditional':
+  '/applications/{application_id}/accept_conditional':
     patch:
       summary: Make a conditional offer to this application
       description: |
