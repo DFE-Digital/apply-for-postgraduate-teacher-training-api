@@ -50,6 +50,8 @@ components:
           $ref: '#/components/schemas/Address'
         date_unavailable_for_interviews:
           $ref: '#/components/schemas/DateUnavailableForInterview'
+        qualifications:
+          $ref: '#/components/schemas/Qualification'
 
     Address:
       type: object
@@ -85,6 +87,39 @@ components:
         date:
           type: string
           format: date
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    Qualification:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        qualification_name:
+          type: string
+        subject:
+          type: string
+        date_awarded:
+          type: string
+          format: date
+        grade:
+          type: string
+        institution_name:
+          type: string
+        degree_class:
+          type: string
+        course_name:
+          type: string
+        results_date:
+          type: string
+          format: date
+        award_name:
+          type: string
         created_at:
           type: string
           format: date-time
