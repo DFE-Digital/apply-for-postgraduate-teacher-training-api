@@ -29,6 +29,25 @@ components:
         personal_statement:
           type: string
 
+    Address:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        postcode:
+          type: string
+        address_line_1:
+          type: string
+        address_line_2:
+          type: string
+        address_line_3:
+          type: string
+        address_line_4:
+          type: string
+        country:
+          type: string
+
 paths:
   '/applications':
     get:
