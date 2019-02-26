@@ -52,6 +52,8 @@ components:
           $ref: '#/components/schemas/DateUnavailableForInterview'
         qualifications:
           $ref: '#/components/schemas/Qualification'
+        work_experiences:
+          $ref: '#/components/schemas/WorkExperience'
 
     Address:
       type: object
@@ -126,6 +128,25 @@ components:
         updated_at:
           type: string
           format: date-time
+
+    WorkExperience:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        employer_name:
+          type: string
+        start_date:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+        job_title:
+          type: string
+        job_description:
+          type: string
 
 paths:
   '/applications':
