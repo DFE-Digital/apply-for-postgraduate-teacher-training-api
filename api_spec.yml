@@ -12,13 +12,9 @@ components:
         id:
           type: string
           format: uuid
-        title:
-          type: string
         first_name:
           type: string
         surname:
-          type: string
-        gender:
           type: string
         date_of_birth:
           type: string
@@ -29,8 +25,6 @@ components:
         phone_number:
           type: string
         nationality:
-          type: string
-        country_of_birth:
           type: string
         personal_statement:
           type: string
