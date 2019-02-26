@@ -28,6 +28,8 @@ components:
           type: string
         personal_statement:
           type: string
+        addresses:
+          $ref: '#/components/schemas/Address'
 
     Address:
       type: object
