@@ -71,6 +71,8 @@ components:
           type: string
         country:
           type: string
+        address_type:
+          type: string
         created_at:
           type: string
           format: date-time
