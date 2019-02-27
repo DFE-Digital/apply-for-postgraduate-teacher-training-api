@@ -12,13 +12,9 @@ components:
         id:
           type: string
           format: uuid
-        title:
-          type: string
         first_name:
           type: string
         surname:
-          type: string
-        gender:
           type: string
         date_of_birth:
           type: string
@@ -30,9 +26,126 @@ components:
           type: string
         nationality:
           type: string
-        country_of_birth:
+        disability:
           type: string
         personal_statement:
+          type: string
+        training_provider_code:
+          type: string
+        training_programme:
+          type: string
+        training_location:
+          type: string
+        full_time:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        addresses:
+          $ref: '#/components/schemas/Address'
+        date_unavailable_for_interviews:
+          $ref: '#/components/schemas/DateUnavailableForInterview'
+        qualifications:
+          $ref: '#/components/schemas/Qualification'
+        work_experiences:
+          $ref: '#/components/schemas/WorkExperience'
+
+    Address:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        postcode:
+          type: string
+        address_line_1:
+          type: string
+        address_line_2:
+          type: string
+        address_line_3:
+          type: string
+        address_line_4:
+          type: string
+        country:
+          type: string
+        address_type:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    DateUnavailableForInterview:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        date:
+          type: string
+          format: date
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    Qualification:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        qualification_name:
+          type: string
+        subject:
+          type: string
+        date_awarded:
+          type: string
+          format: date
+        grade:
+          type: string
+        institution_name:
+          type: string
+        degree_class:
+          type: string
+        course_name:
+          type: string
+        results_date:
+          type: string
+          format: date
+        award_name:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    WorkExperience:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        employer_name:
+          type: string
+        start_date:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+        job_title:
+          type: string
+        job_description:
           type: string
 
 paths:
@@ -110,7 +223,8 @@ paths:
       parameters:
         - name: application_id
           in: path
-          description: UUIDv4 of the application to make an offer to
+          description: |
+            UUIDv4 of the application to make an unconditional offer to
           required: true
           schema:
             type: string
@@ -129,7 +243,7 @@ paths:
         '404':
           description: Application not found
         '409':
-          description: Application has already been rejected.
+          description: Application has already been made an offer.
 
   '/applications/{application_id}/reject':
     patch:
